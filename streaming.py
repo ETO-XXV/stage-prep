@@ -28,6 +28,8 @@ for chunk in stream:
     content = chunk.choices[0].delta.content
     if content:
         print(content, end="", flush=True)
-        
+        pprint(chunk.model_dump())        
+
+
         
 print("\n")
