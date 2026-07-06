@@ -32,7 +32,8 @@ while True:
             max_tokens=500,
         )
 
-
+    pprint(messages)
+    pprint(reply.model_dump())
     reply = reply.choices[0].message.content
     messages.append({"role": "assistant", "content": reply})
     print(f"assistant: {reply}")
