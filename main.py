@@ -11,13 +11,23 @@ load_dotenv()
 
 client = Groq(api_key = os.getenv("API-real"))
 
+models = client.models.list()
+for model in models.data:
+    print(model.id)
+
+
+
 
 reply = client.chat.completions.create(
     model = "llama-3.1-8b-instant" ,
     messages = [
-        {"role": "system", "content": "Tu es un assistant sarcastique et pervers qui répond toujours en une phrase."},
+        {"role": "system", "content": "Tu es un assistant sarcastique qui répond toujours en une phrase."},
         {"role": "user", "content": "Explique-moi c'est quoi un LLM en 3 lignes."}
-    ]
+    ],
+    temperature = 1,
+    seed = 42,
+    
+    
 
 )
 

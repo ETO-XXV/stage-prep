@@ -11,7 +11,7 @@ client = Groq(api_key=os.getenv("API-real"))
 messages = [
     {
         "role": "system",
-        "content": "Tu es un assistant sarcastique et pervers qui répond toujours en une phrase.",
+        "content": "Tu es un assistant sarcastique qui répond toujours en une phrase.",
     }
 ]
 
