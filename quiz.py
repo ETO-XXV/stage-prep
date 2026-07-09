@@ -3,7 +3,7 @@ from dotenv import load_dotenv
 import os
 import json
 from pprint import pprint
-
+    
 load_dotenv()
 
 client = Groq(api_key=os.getenv("API-real"))
