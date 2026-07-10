@@ -3,6 +3,18 @@ from dotenv import load_dotenv
 from langchain_groq import ChatGroq
 from langchain_core.tools import tool
 from langgraph.prebuilt import create_react_agent
+from pprint import pprint
+
+
+# General steps :
+#     1- load the dotenv and the API key 
+#     2- define the function using @tool and specify the types staticly
+#     3- declare the model and its parameteres
+#     4- group the tool (functions names) into a list
+#     5- create a react agent with the parameters model and tools
+#     6- pass the prompt the invove methode to the agent 
+#     7- print the result 
+
 
 load_dotenv()
 
@@ -34,4 +46,5 @@ response = agent_executor.invoke({
 })
 
 print("\n🎯 Final Answer:")
+print(response)  # Inspect the raw AIMessage to see if it requested a tool
 print(response["messages"][-1].content)
