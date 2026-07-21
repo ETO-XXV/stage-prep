@@ -4,6 +4,14 @@ import os
 import json
 from pprint import pprint
 
+# Generation steps :
+#   1- Initialize the Groq client
+#   2- Load the API key from the .env file
+#   3- Create a prompt template that specifies the fields
+#   4- Create a chain that combines the prompt template, the model, and the output parser
+#   5- Invoke the chain with the input data and get the response
+#   6- Print the response in JSON format
+
 
 from langchain_core.prompts import ChatPromptTemplate , MessagesPlaceholder
 from langchain_core.output_parsers import StrOutputParser
